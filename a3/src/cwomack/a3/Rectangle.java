@@ -9,26 +9,38 @@ public class Rectangle extends Square{
 
     /**
      * Constructor for rectangle class
+     * Sets shape type to rectangle
      */
     public Rectangle(){
         super();
         this.setType(Type.RECTANGLE);
-        this.setWidth(0);
+        //this.setWidth(0);
     }
 
     /**
-     * Sets the width and height of the rectangle
-     * @param width
-     * @param height
+     * Override constructor that sets the width and height of the rectangle
+     * @param width float that represents the width of a rectangle
+     * @param height float that represents the height of a rectangle
      */
     public Rectangle(float width, float height){
         super();
+        this.setType(Type.RECTANGLE);
         this.setWidth(width);
         this.height = height;
     }
+
+    /**
+     * Gets the height of a rectangle
+     * @return height as a float
+     */
     public float getHeight(){
         return this.height;
     }
+
+    /**
+     * Sets the height of the rectangle
+     * @param height float that represents the height of a rectangle
+     */
     public void setHeight(float height){
         this.height = height >= 0 ? height : 0;
     }

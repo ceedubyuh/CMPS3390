@@ -7,14 +7,18 @@ package cwomack.a3;
 public class RightTriangle extends Rectangle{
     private float height;
 
+    /**
+     * Default constructor for RightTriangle class that sets the type and height
+     */
     public RightTriangle(){
         super();
         this.setType(Type.RightTriangle);
         this.setHeight(0);
     }
     /**
-     * @param width width of the right triangle, inherited from the rectangle class
-     * @param height height of the right triangle
+     * Override constructor that sets type, width and height
+     * @param width float that represents the width of a right triangle
+     * @param height float that represents the height of a right triangle
      */
     public RightTriangle(float width, float height){
         super();
@@ -25,7 +29,7 @@ public class RightTriangle extends Rectangle{
 
     /**
      * Override getHeight from inherited parent class
-     * @return height of the triangle
+     * @return height of the triangle as a float
      */
     @Override
     public float getHeight(){
