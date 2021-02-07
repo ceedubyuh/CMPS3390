@@ -57,6 +57,6 @@ public class Circle extends Shape{
      */
     @Override
     public String toString() {
-        return String.format("%s Radius: %-10.2f", super.toString(), this.getRadius());
+        return String.format("%s Area: %-10.2f | Radius: %-10.2f |", super.toString(), this.getArea(), this.getRadius());
     }
 }

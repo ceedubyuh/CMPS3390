@@ -56,6 +56,6 @@ public class Square extends Shape{
      */
     @Override
     public String toString(){
-        return String.format("%s Width: %-10.2f", super.toString(), this.getWidth());
+        return String.format("%s Area: %-10.2f | Width: %-10.2f |", super.toString(), this.getArea(), this.getWidth());
     }
 }

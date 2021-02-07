@@ -57,7 +57,6 @@ public class Oval extends Circle{
      * Override of Circle's parent toString to add radius 2
      */
     public String toString(){
-        return String.format("%s Radius: %-10.2f", super.toString(), this.getRadius(),
-        "%s Radius2: %-10.2f", super.toString(), this.getRadius2());
+        return String.format("%s Radius2: %-10.2f", super.toString(), this.getRadius2());
     }
 }

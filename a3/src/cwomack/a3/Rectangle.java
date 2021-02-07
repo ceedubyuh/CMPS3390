@@ -60,6 +60,6 @@ public class Rectangle extends Square{
      */
     @Override
     public String toString(){
-        return String.format("%s Height: %-10.2f", super.toString(), this.getHeight());
+        return String.format("%s Height: %-10.2f ",super.toString(), this.getHeight());
     }
 }
