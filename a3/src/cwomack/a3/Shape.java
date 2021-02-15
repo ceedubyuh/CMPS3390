@@ -30,12 +30,16 @@ public class Shape{
         this.type = type;
     }
 
+    public double getArea() {
+        return 0;
+    }
+
     /**
      * OVerride of the toString function to print shapes nicely
      * @return string that represents all properties of a shape
      */
     @Override
     public String toString(){
-        return String.format("Type: %-12s | ", this.type);
+        return String.format("Type: %-12s  | ", this.type);
     }
 }
