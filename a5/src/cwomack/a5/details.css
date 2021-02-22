@@ -1,0 +1,19 @@
+BorderPane{
+    -fx-background-color: #515693;
+}
+
+HBox{
+    -fx-background-radius: 10;
+    -fx-background-color: #333;
+}
+VBox{
+    -fx-spacing: 25px;
+}
+
+.btc-hbox{
+    -fx-background-color: #7c5e00;
+}
+
+.eth-hbox{
+    -fx-background-color: #474747;
+}
