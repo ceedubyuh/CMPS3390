@@ -11,10 +11,18 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class CoinGecko {
+    /**
+     * Initializes the HttpClient and HTTP version
+     */
     private static final HttpClient httpClient = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
             .build();
 
+    /**
+     * Function to update the price history of each coin based on the amount of days specified
+     * @param coin which coin is selected, bitcoin or ethereum
+     * @param days number of days selected
+     */
     public static void updatePriceHistory(Coin coin, int days) {
         coin.getHistoricalValues().getData().clear();
         HttpRequest request = HttpRequest.newBuilder()
@@ -37,6 +45,11 @@ public class CoinGecko {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Function to update the current price of either coin
+     * @param coin which coin is selected, bitcoin or ethereum
+     */
     public static void updateCurrentPrice(Coin coin){
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()

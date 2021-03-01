@@ -30,6 +30,10 @@ public class ChartController {
     ComboBox cbCoinSelector;
 
     Coin bitcoin, ethereum;
+
+    /**
+     * Function to initialize the price range of each coin for the last 365 days.
+     */
     public void initialize() {
         priceChart.setAnimated(false);
         bitcoin = new Coin("bitcoin");
@@ -40,12 +44,21 @@ public class ChartController {
         priceChart.getData().add(bitcoin.getHistoricalValues());
     }
 
+    /**
+     * Function that returns the user to the home page when the back arrow is clicked with a mouse.
+     * @param mouseEvent default mouseEvent is a mouse click.
+     * @throws IOException
+     */
     public void onBackArrowClicked(MouseEvent mouseEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Details.fxml"));
         Stage primaryStage = (Stage) btnBackArrow.getScene().getWindow();
         primaryStage.setScene(new Scene(root, 700, 475));
     }
 
+    /**
+     * Function that sets the number of days when the ComboBox value is changed within the application.
+     * @param actionEvent when the ComboBox value changes.
+     */
     public void onDateRangeChanged(ActionEvent actionEvent) {
         int days = 0;
         switch((String)cbDataRange.getValue()){
@@ -69,6 +82,9 @@ public class ChartController {
         CoinGecko.updatePriceHistory(ethereum, days);
     }
 
+    /**
+     * Function that updates the price chart based on the Coin ComboBox selection
+     */
     private void updateChart(){
         priceChart.getData().clear();
         switch((String) cbCoinSelector.getValue()){
@@ -85,6 +101,10 @@ public class ChartController {
         }
     }
 
+    /**
+     * Simple function that clears and updates the chart when the ComboBox events are changed.
+     * @param actionEvent
+     */
     public void onCoinSelectionChanged(ActionEvent actionEvent) {
         updateChart();
     }

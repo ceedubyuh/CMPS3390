@@ -33,6 +33,10 @@ public class DetailsController {
     Coin bitcoin, ethereum;
     Timer bitcoinTimer, ethereumTimer;
 
+    /**
+     * Initialize function for both coins that sets up timers to call from the REST service.
+     * Calls from REST at 5 second intervals.
+     */
     public void initialize() {
         this.bitcoin = new Coin("bitcoin");
         this.ethereum = new Coin("ethereum");
@@ -55,12 +59,21 @@ public class DetailsController {
         }, 0, 5000);
     }
 
+    /**
+     * Function that changes the scene to Chart.fxml when the button is clicked with a mouse.
+     * @param mouseEvent the default mouseEvent which is a click.
+     * @throws IOException
+     */
     public void onDetailButtonClicked(MouseEvent mouseEvent) throws IOException {
         shutdown();
         Parent root = FXMLLoader.load(getClass().getResource("Chart.fxml"));
         Stage primaryStage = (Stage) btHBox.getScene().getWindow();
         primaryStage.setScene(new Scene(root, 700, 475));
     }
+
+    /**
+     * Function to shutdown the calls to the REST service to save memory.
+     */
     public void shutdown(){
         System.out.println("Shutdown called, stopping timers.");
         bitcoinTimer.cancel();

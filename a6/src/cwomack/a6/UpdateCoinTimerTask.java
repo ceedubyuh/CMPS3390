@@ -7,6 +7,9 @@ public class UpdateCoinTimerTask implements Runnable {
         this.coin = coin;
     }
 
+    /**
+     * Override function that gives console output to check if prices are updating and if prices have changed recently.
+     */
     @Override
     public void run() {
         System.out.println("Checking for update on " + coin.getName());
