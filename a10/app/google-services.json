@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "929171022483",
+    "project_id": "cwomacka10",
+    "storage_bucket": "cwomacka10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929171022483:android:58e29f6f654e55ac8e6366",
+        "android_client_info": {
+          "package_name": "cwomack.a10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929171022483-cv1ljokholerc8edq708782aun69ff70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmPJrKvUCKeVOHmsNYPvNYcKAUD2dCGc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929171022483-cv1ljokholerc8edq708782aun69ff70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
