@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
+    /**
+     * Main function for creating the content view of the app
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +60,17 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
         updateList();
     }
 
+    /**
+     * Void function that updates the list from Firebase when app is opened, or tab is changed/
+     */
     private void updateList() {
         showToast("Getting List", Toast.LENGTH_SHORT);
         Database.getList(db, selectedCollection, items, itemsAdapter);
     }
 
+    /**
+     * Function to clear the list when a new tab is clicked
+     */
     private void setUpTabClickListener() {
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -87,6 +97,9 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
         });
     }
 
+    /**
+     * Function to handle long presses on list items and delete them from the app and Firebase
+     */
     private void setupLongClickHandler() {
     listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
         @Override
@@ -100,12 +113,24 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
         });
     }
 
+    /**
+     * Function to display a Toast message in the middle of the screen when certain events are triggered
+     * @param message toast message
+     * @param length how long the toast remains on screen
+     */
     private void showToast(String message, int length) {
         Toast toast = Toast.makeText(this, message, length);
         toast.setGravity(Gravity.CENTER, 0, -30);
         toast.show();
     }
 
+    /**
+     * Function to add items to the list and Firebase
+     * @param v The in app text view
+     * @param actionId
+     * @param event
+     * @return true
+     */
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         if(event == null || event.getAction() == KeyEvent.ACTION_UP) {

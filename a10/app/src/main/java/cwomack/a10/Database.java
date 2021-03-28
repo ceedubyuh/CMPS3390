@@ -20,6 +20,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Main function to create new items in the Firebase database
+ */
 public class Database {
     public static void add(FirebaseFirestore db, String selectedCollection, ListItem item) {
         Map<String, Object> listItem = new HashMap<>();
@@ -40,6 +43,13 @@ public class Database {
                 });
     }
 
+    /**
+     * getList function to load the collection when app is relaunched, or tab is selected
+     * @param db database parameter
+     * @param selectedCollection collected that is selected with tabs
+     * @param items each item in the list
+     * @param itemsAdapter the list itself
+     */
     public static void getList(FirebaseFirestore db, String selectedCollection,
                                ArrayList<ListItem> items, ArrayAdapter<ListItem> itemsAdapter) {
         db.collection(selectedCollection)
@@ -66,6 +76,13 @@ public class Database {
                 });
     }
 
+    /**
+     * removeItem function removes items when they are long pressed
+     *@param db database parameter
+     *@param selectedCollection collected that is selected with tabs
+     * @param items each item in the list
+     * @param itemsAdapter the list itself
+     */
     public static void removeItem(FirebaseFirestore db, String selectedCollection,
                                   ArrayList<ListItem> items, ArrayAdapter<ListItem> itemsAdapter, ListItem removedItem){
         db.collection(selectedCollection).whereEqualTo("item.dttm", removedItem.getDttm())
