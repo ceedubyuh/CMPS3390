@@ -3,7 +3,10 @@ package edu.csub.startracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Point;
+import android.media.tv.TvView;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -22,6 +25,15 @@ public class GameActivity extends AppCompatActivity {
         setContentView(gameView);
     }
 
+    public void gameOver(){
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+            }
+        },6000);
+    }
     @Override
     protected void onPause(){
         super.onPause();
